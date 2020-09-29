@@ -6,7 +6,7 @@ const chainMaker = {
     if (test.includes(SEPARATOR)) {
       return test.split("~~").length;
     }
-    return false;
+    return 0;
   },
   addLink(value) {
     if (this.chain) {
@@ -14,6 +14,7 @@ const chainMaker = {
     } else {
       this.chain = `( ${value} )`;
     }
+
     return this;
   },
   removeLink(position) {
@@ -28,6 +29,7 @@ const chainMaker = {
       position < 0 ||
       position > chainArr.length
     ) {
+      this.chain = "";
       throw new TypeError("Position not exist");
     }
 
