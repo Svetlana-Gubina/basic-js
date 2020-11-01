@@ -1,5 +1,5 @@
 module.exports = function transform(arr) {
-
+  console.log(arr.join());
   if (!Array.isArray(arr)) {
     throw new TypeError("Wrong data type!");
   }
@@ -23,21 +23,21 @@ module.exports = function transform(arr) {
       result.push(test[i]);
     }
 
-    if (test[i] === myObj[1] && i !== 0) {
+    if (test[i] === myObj[1] && i !== 0) { // "--discard-prev"
       result.splice(i - 1, 1);
     }
 
-    if (test[i] === myObj[2] && i !== test.length - 1) {
-      test.splice(i + 1, 1);
+    if (test[i] === myObj[2] && i !== test.length - 1) { // "--discard-next"
+      test.splice(i + 1, 2);
     }
 
-    if (test[i] === myObj[3] && i !== 0) {
+    if (test[i] === myObj[3] && i !== 0) { // "--double-prev"
       result.push(test[i - 1]);
     }
 
-    if (test[i] === myObj[4] && i !== test.length - 1) {
+    if (test[i] === myObj[4] && i !== test.length - 1) { // "--double-next"
       result.push(test[i + 1]);
     }
   }
-  return result.filter((item) => !Object.values(myObj).includes(item));
+  return result;
 };

@@ -23,7 +23,6 @@ class VigenereCipheringMachine {
       strFromKey = keyUppercase.repeat(index).slice(0, messageUpperCase.length);
     } else if (messageUpperCase.length < keyUppercase.length) {
       strFromKey = keyUppercase.slice(0, messageUpperCase.length);
-      console.log(strFromKey);
     } else {
       strFromKey = keyUppercase;
     }
@@ -66,7 +65,6 @@ class VigenereCipheringMachine {
       strFromKey = keyUppercase.repeat(index).slice(0, encryptedMessageUpperCase.length);
     } else if (encryptedMessageUpperCase.length < keyUppercase.length) {
       strFromKey = keyUppercase.slice(0, encryptedMessageUpperCase.length);
-      console.log(strFromKey);
     } else {
       strFromKey = keyUppercase;
     }
