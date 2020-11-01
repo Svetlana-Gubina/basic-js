@@ -1,5 +1,4 @@
 module.exports = function countCats(matrix) {
-  // arr1.flat();
   let cats = 0;
   const reg = /^(\^{2})$/;
 
